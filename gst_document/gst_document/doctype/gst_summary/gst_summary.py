@@ -7,18 +7,15 @@ import frappe
 from frappe.model.document import Document
 
 class GSTSummary(Document):
-	
-
 	def validate(self):
 
 		if not self.from_date and not self.to_date :
 			frappe.throw("Please select From Date and First Date first before click button Get Data")
-
+		count = frappe.db.sql("select count(1) from `tabGST Summary` where docstatus<2",as_list=1)
+		if count and count[0][0]>5:
+			frappe.throw("This Module is on Trial Mode and no longer can be used")
 		if self.is_get_data != 1 :
 			frappe.throw("You need to Get Data first before save this document")
-
-		
-		
 		self.total_value_1_2_3_taxable_amount = self.gst_standard_rated_supplies_taxable_amount + self.gst_zero_rated_supplies_taxable_amount + self.gst_exempted_rated_supplies_taxable_amount
 		self.total_value_1_2_3_gst_amount = self.gst_standard_rated_supplies_gst_amount + self.gst_zero_rated_supplies_gst_amount + self.gst_exempted_rated_supplies_gst_amount
 
