@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gst_document *.css
+recursive-include gst_document *.csv
+recursive-include gst_document *.html
+recursive-include gst_document *.ico
+recursive-include gst_document *.js
+recursive-include gst_document *.json
+recursive-include gst_document *.md
+recursive-include gst_document *.png
+recursive-include gst_document *.py
+recursive-include gst_document *.svg
+recursive-include gst_document *.txt
+recursive-exclude gst_document *.pyc

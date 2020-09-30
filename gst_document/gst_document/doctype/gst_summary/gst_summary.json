@@ -1,0 +1,345 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2020-09-03 10:00:03.784162",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "naming_series",
+  "company",
+  "gst_register_no",
+  "column_break_5",
+  "from_date",
+  "to_date",
+  "get_data",
+  "is_get_data",
+  "section_break_9",
+  "gst_standard_rated_supplies",
+  "gst_zero_rated_supplies",
+  "gst_exempted_supplier",
+  "total_value_1_2_3",
+  "column_break_11",
+  "gst_standard_rated_supplies_taxable_amount",
+  "gst_zero_rated_supplies_taxable_amount",
+  "gst_exempted_rated_supplies_taxable_amount",
+  "total_value_1_2_3_taxable_amount",
+  "column_break_13",
+  "gst_standard_rated_supplies_gst_amount",
+  "gst_zero_rated_supplies_gst_amount",
+  "gst_exempted_rated_supplies_gst_amount",
+  "total_value_1_2_3_gst_amount",
+  "section_break_24",
+  "gst_standard_rated_purchases",
+  "gst_zero_rated_purchases",
+  "column_break_27",
+  "gst_standard_rated_purchases_taxable_amount",
+  "gst_zero_rated_purchases_taxable_amount",
+  "column_break_30",
+  "gst_standard_rated_purchases_gst_amount",
+  "gst_zero_rated_purchases_gst_amount",
+  "section_break_33",
+  "output_tax_due",
+  "input_tax_refunds_claimed_data",
+  "equals",
+  "column_break_35",
+  "data_36",
+  "column_break_37",
+  "output_tax",
+  "input_tax_refund_claimed",
+  "paid_by_or_claimed_by",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "GST-DOC-.MM.-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "gst_register_no",
+   "fieldtype": "Data",
+   "label": "GST Register No"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data",
+   "options": "get_data"
+  },
+  {
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Total value of GST Standard-rated supplies",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_standard_rated_supplies",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_standard_rated_supplies_taxable_amount",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_standard_rated_supplies_gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount",
+   "read_only": 1
+  },
+  {
+   "default": "Total value of GST Zero-rated supplies",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_zero_rated_supplies",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "Total value of GST Exempted supplies",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_exempted_supplier",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_zero_rated_supplies_taxable_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_exempted_rated_supplies_taxable_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_zero_rated_supplies_gst_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "gst_exempted_rated_supplies_gst_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "Total value of (1) + (2) + (3)",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "total_value_1_2_3",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "total_value_1_2_3_taxable_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "total_value_1_2_3_gst_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Total value of GST Standard-rated purchases",
+   "fieldname": "gst_standard_rated_purchases",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "Total value of GST Zero-rated purchases",
+   "fieldname": "gst_zero_rated_purchases",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_standard_rated_purchases_taxable_amount",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_zero_rated_purchases_taxable_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_standard_rated_purchases_gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_zero_rated_purchases_gst_amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_get_data==1",
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "OUTPUT TAX DUE",
+   "fieldname": "output_tax_due",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_36",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "LESS: INPUT TAX AND REFUNDS CLAIMED",
+   "fieldname": "input_tax_refunds_claimed_data",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "EQUALS: NET GST TO BE PAID BY YOU OR NET GST TO BE CLAIMED BY YOU",
+   "fieldname": "equals",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "input_tax_refund_claimed",
+   "fieldtype": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_or_claimed_by",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_get_data",
+   "fieldtype": "Check",
+   "hidden": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "output_tax",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "GST Summary",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-09-03 12:44:39.470020",
+ "modified_by": "Administrator",
+ "module": "GST Document",
+ "name": "GST Summary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

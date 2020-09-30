@@ -1,0 +1,56 @@
+{
+ "creation": "2020-09-03 11:01:04.624099",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "accounts_setting_section",
+  "gst_account_sales",
+  "column_break_3",
+  "gst_account_purchase"
+ ],
+ "fields": [
+  {
+   "fieldname": "accounts_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Accounts Setting"
+  },
+  {
+   "fieldname": "gst_account_sales",
+   "fieldtype": "Link",
+   "label": "GST Account Sales",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_account_purchase",
+   "fieldtype": "Link",
+   "label": "GST Account Purchase",
+   "options": "Account"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-09-03 11:01:04.624099",
+ "modified_by": "Administrator",
+ "module": "GST Document",
+ "name": "GST Accounts Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
